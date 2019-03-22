@@ -31,3 +31,17 @@
     transform: rotate(360deg);
   }
 }
+
+.anime-card{
+  background: lightblue;
+  display: inline-block;
+  box-shadow: 2px 2px 4px #555;
+}
+
+.anime-image{
+  float:left;
+}
+
+.anime-front{
+  float:left
+}
