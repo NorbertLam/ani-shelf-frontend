@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Spring from './components/Spring'
+import Home from './containers/Home'
+import Nav from './containers/NavBar'
+
 
 
 class App extends Component {
   render() {
-    return (
-      // for changing background
-      <Home />
+    return (<div>
+        <Nav />
+        <Home />
+      </div>
     )
   }
 }
