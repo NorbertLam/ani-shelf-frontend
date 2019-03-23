@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import { Route, Switch, withRouter} from 'react-router-dom';
 import './App.css';
-import Container from './containers/CardContainer'
+import CardContainer from './containers/CardContainer';
+import SignupContainer from './containers/SignupContainer';
+import LoginContainer from './containers/LoginContainer'
 
 class App extends Component {
+  state = {
+    user: {},
+    season: 'SPRING'
+  }
+
   render() {
-    return (<div>
-      <Container />
+    return (
+    <div>
+      <LoginContainer />
+      <SignupContainer />
+      <CardContainer />
     </div>)
   }
 }
