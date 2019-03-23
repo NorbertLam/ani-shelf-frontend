@@ -7,7 +7,7 @@ import Nav from './containers/NavBar'
 
 class App extends Component {
   render() {
-    return (<div>
+    return (<div className="main-container">
         <Nav />
         <Home />
       </div>
@@ -16,7 +16,3 @@ class App extends Component {
 }
 
 export default App;
-
-{/* <video autoPlay loop id="bg-video">
-    <source src="/videos/hero.webm" type="Video/webm"/>
-</video> */}

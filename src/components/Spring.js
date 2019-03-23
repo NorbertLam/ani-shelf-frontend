@@ -5,7 +5,6 @@ export class Spring extends Component {
   render() {
     return (
       <div>
-        <img className="bg-season" src="/images/spring.jpg"/>
         <Container/>
       </div>
     )

@@ -16,7 +16,7 @@ export class Home extends Component {
           </video> : null }
         <Router>
           <Switch>
-            <Route path="/spring-2019" render={() => <Spring />}/>
+            <Route path="/fall" render={() => <Fall />}/>
           </Switch>
         </Router>
       </div>

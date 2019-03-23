@@ -1,3 +1,12 @@
+.main-container{
+  position:relative;
+}
+
+.nav{
+  position: absolute;
+  right:0;
+}
+
 #bg-video{
   z-index: -2;
   opacity: 1;
@@ -7,12 +16,14 @@
 .bg-season{
   z-index: -1;
   position:fixed;
+  opacity: 0.85;
   height: 100vh;
   width: 100vw;
 }
 
 .anime-card{
-  background: lightblue;
+  background: white;
+  border-radius: 7px;
   position: relative;
   display: inline-block;
   box-shadow: 2px 2px 4px #555;
