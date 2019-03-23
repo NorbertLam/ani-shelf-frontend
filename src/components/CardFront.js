@@ -5,10 +5,10 @@ export class CardFront extends Component {
     const image = "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg/220px-One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg"
     return (
       <div>
-          <div className="anime-image">
-            <img src={image}/>
+          <div className="anime-left">
+            <img className="anime-image" src={image}/>
           </div>
-          <div className="anime-front">
+          <div className="anime-right">
             <h1>Boku no Pico</h1>
             <p>alfalelkaelaefllaelavlalklkadvlkadlkvnadlkvndaklv</p>
         </div>

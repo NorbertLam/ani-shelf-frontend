@@ -32,7 +32,7 @@ export class CardContainer extends Component {
   render() {
       console.log(this.state)
     return (
-      <div>
+      <div className="container">
         <Card />
       </div>
     )
