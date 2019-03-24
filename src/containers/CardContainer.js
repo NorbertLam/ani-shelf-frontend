@@ -31,10 +31,11 @@ export class CardContainer extends Component {
         })
     }
   render() {
-    console.log(this.state[this.props.season]);
+    const cardArr = this.state[this.props.season].map(anime => <Card key={anime.anime_id} animeObj={anime} />)
+
     return (
       <div className="container">
-        <Card />
+        {cardArr}
       </div>
     )
   }

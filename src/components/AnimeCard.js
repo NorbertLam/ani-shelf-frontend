@@ -5,7 +5,7 @@ export class AnimeCard extends Component {
   render() {
     return (
       <div className="anime-card">
-        <Front />
+        <Front animeObj={this.props.animeObj} />
       </div>
     )
   }
