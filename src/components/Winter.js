@@ -5,7 +5,7 @@ export class Winter extends Component {
   render() {
     return (
       <div>
-        
+        <Container season='WINTER' />
       </div>
     )
   }

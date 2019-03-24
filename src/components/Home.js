@@ -6,8 +6,8 @@ export class Home extends Component {
     return (
       <div>
         <video autoPlay loop id="bg-video">
-//           <source src="/videos/hero.webm" type="video/webm"/>
-//       </video>
+           <source src="/videos/hero.webm" type="video/webm"/>
+       </video>
       </div>
     )
   }

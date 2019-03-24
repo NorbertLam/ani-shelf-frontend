@@ -3,10 +3,10 @@ import Card from '../components/AnimeCard'
 
 export class CardContainer extends Component {
     state = {
-        spring: [],
-        summer: [],
-        fall: [],
-        winter: []
+        SPRING: [],
+        SUMMER: [],
+        FALL: [],
+        WINTER: []
     }
     componentDidMount(){
         fetch('http://localhost:3000/animes')
@@ -19,27 +19,23 @@ export class CardContainer extends Component {
                     case "WINTER": winter.push(anime); break;
                     case "SUMMER": summer.push(anime); break;
                     case "FALL": fall.push(anime); break;
+                    default: break;
                 }
             })
             this.setState({
-                spring: spring,
-                summer: summer,
-                fall: fall,
-                winter: winter
+                SPRING: spring,
+                SUMMER: summer,
+                FALL: fall,
+                WINTER: winter
             })
         })
     }
   render() {
-      console.log(this.state)
+    const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} /> : null )
+
     return (
       <div className="container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {cardArr}
       </div>
     )
   }
