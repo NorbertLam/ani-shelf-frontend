@@ -1,10 +1,15 @@
+*{
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+
 .main-container{
   position:relative;
 }
 
 .nav{
-  position: absolute;
-  right:0;
+  z-index:100
 }
 
 #bg-video{
@@ -27,8 +32,8 @@
   position: relative;
   display: inline-block;
   box-shadow: 2px 2px 4px #555;
-  width: 460px;
-  height: 265px;
+  width: 46rem;
+  height: 26.5rem;
 }
 
 .anime-right{
@@ -41,8 +46,12 @@
 
 .anime-left, .anime-image{
   display:inline-block;
-  width:185px;
-  height:265px;
+  width:18.5rem;
+  height:26.5rem;
+}
+
+.btn-genre{
+  font-size: 2rem;
 }
 
 
