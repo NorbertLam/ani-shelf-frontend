@@ -16,6 +16,7 @@ export class CardFront extends Component {
                 <button className="btn-genre">Genre3</button>
             </div>
         </div>
+        
     </div>
     )
   }

@@ -34,6 +34,12 @@ export class CardContainer extends Component {
     return (
       <div className="container">
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     )
   }
