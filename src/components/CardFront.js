@@ -6,7 +6,7 @@ export class CardFront extends Component {
     return (
     <div>
         <div className="anime-left">
-            <img className="anime-image" src={image}/>
+            <img className="anime-image" src={image}  alt="" />
         </div>
         <div className="anime-right">
             <h1 className="anime-title">Boku no Pico</h1>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Home from './components/Home'
 import Fall from './components/Fall'
@@ -13,8 +13,7 @@ import Nav from './containers/NavBar'
 
 class App extends Component {
   state = {
-    user: {},
-    season: 'SPRING'
+    user: {}
   }
 
   render() {
