@@ -31,7 +31,7 @@ export class CardContainer extends Component {
         })
     }
   render() {
-    const cardArr = this.state[this.props.season].map(anime => <Card key={anime.anime_id} animeObj={anime} />)
+    const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} /> : null )
 
     return (
       <div className="container">
