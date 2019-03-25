@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
+
 
 export class Home extends Component {
   render() {
@@ -18,4 +20,4 @@ export class Home extends Component {
 //           <source src="/videos/hero.webm" type="video/webm"/>
 //         </video> : null }
 
-export default Home
+export default withRouter(Home);

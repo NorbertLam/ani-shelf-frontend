@@ -8,7 +8,7 @@ export class CardContainer extends Component {
         FALL: [],
         WINTER: []
     }
-    componentDidMount(){
+    componentWillMount(){
         fetch('http://localhost:3000/animes')
         .then(resp => resp.json())
         .then(animes => {
