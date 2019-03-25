@@ -32,7 +32,13 @@ class SignUpForm extends React.Component {
       body: JSON.stringify(userObj)
     })
       .then(resp => resp.json())
-      .then(console.log)
+      .then(json => {
+        if (json.error) {
+          alert(json.error);
+        } else {
+          this.props.handleSignUp();
+        }
+      })
   }
 
   render () {

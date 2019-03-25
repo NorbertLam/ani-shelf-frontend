@@ -7,7 +7,7 @@ class SignupContainer extends React.Component {
     return (
       <div className="login">
         <h1>SIGN UP</h1>
-        <SignupForm />
+        <SignupForm handleSignUp={this.props.handleSignUp}/>
       </div>
     )
   }
