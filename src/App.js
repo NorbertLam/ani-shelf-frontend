@@ -31,7 +31,7 @@ class App extends Component {
       .then(resp => resp.json())
       .then(user => {
         this.setState({ user }, () => {
-          this.props.history.push("/fall");
+          this.props.history.push("/spring");
         })
       })
     } else {
