@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form } from 'semantic-ui-react'
 
 class SignUpForm extends React.Component {
   
@@ -37,7 +38,7 @@ class SignUpForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit} >
+      <Form onSubmit={this.handleSubmit} >
         <label>
           Email: 
           <input type="text" name="email" value={this.state.email} onChange={this.handleInput} />
@@ -48,7 +49,7 @@ class SignUpForm extends React.Component {
           <input type="text" name="password" value={this.state.passwordx} onChange={this.handleInput} />
         </label>
         <input type="submit" value="Sign Up"/>
-      </form>
+      </Form>
     )
   }
 }

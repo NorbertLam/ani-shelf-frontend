@@ -1,4 +1,12 @@
 import React from 'react';
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Message,
+  Segment,
+} from 'semantic-ui-react';
 
 class LoginForm extends React.Component {
 
@@ -38,11 +46,16 @@ class LoginForm extends React.Component {
   
   render () {
     return (
-      <form onSubmit={this.handleLogin}>
-        <input type="text" name="email" value={this.state.email} onChange={this.handleInput} />
-        <input type="text" name="password" value={this.state.password} onChange={this.handleInput} />
-        <input type="submit" value="Login" />
-      </form>
+      <div class="ui one column stackable center aligned page grid">
+        <div class="column twelve wide">
+        <Form className="ui compact form" onSubmit={this.handleLogin}>
+          <Form.Input className="ui small input" type="text" name="email" value={this.state.email} onChange={this.handleInput} />
+          <Form.Input className="ui small input" type="text" name="password" value={this.state.password} onChange={this.handleInput} />
+          <Form.Input className="ui small input" type="submit" value="Login" />
+        </Form>
+        </div>
+      </div>
+
     )
   }
 
