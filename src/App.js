@@ -39,13 +39,17 @@ class App extends Component {
     }
   }
 
-  setLogin = (userObj, token) => {
+  setLogin = (userObj) => {
+    if (userObj.message) {
+      return this.props.history.push("/")
+    }
+
     const user = {
-      user: userObj
+      user: userObj.user
     }
 
     this.setState({user}, () => {
-      localStorage.setItem("token", token);
+      localStorage.setItem("token", userObj.jwt);
       this.props.history.push("/spring");
     });
   }
