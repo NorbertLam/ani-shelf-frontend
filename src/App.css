@@ -96,8 +96,8 @@
 .anime-right{
   display:inline-block;
   position: absolute;
-  overflow: hidden;
   word-wrap: none;
+  padding: 2rem 1.5rem 0 1.5rem;
 }
 
 .anime-left, .anime-image{
@@ -128,15 +128,18 @@
 .btn-genre{
   font-size: 1.4rem;
   border-radius: 25px;
-  background:orange;
+  background:rgb(101,48,141);
   color:white;
   padding: 0px 1rem;
   display: inline-block;
+  margin-right:5px;
 }
 
 .heart{
-  font-size: 4rem;
-  color: red;
+  height:25px;
+  width:25px;
+  border: none;
+  outline:none;
 }
 
 /*login and signup */
