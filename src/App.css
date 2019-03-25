@@ -75,7 +75,7 @@
   background: white;
   border-radius: 3px;
   position: relative;
-  display: inline-block;
+  display: flex;
   justify-content: center;
   box-shadow: 0 5px 4px #ddd;
   width: 46.1rem;
@@ -91,13 +91,23 @@
 /* card front */
 
 .anime-left{
+  float:left;
   position:relative;
+  width:50%
 }
 .anime-right{
   display:inline-block;
-  position: absolute;
+  position:relative;
   word-wrap: none;
-  padding: 2rem 1.5rem 0 1.5rem;
+  padding: 2rem 1.5rem;
+  height:22.7rem;
+  float:left;
+  width:50%;
+}
+
+.anime-details{
+  height:inherit;
+  position:relative;
 }
 
 .anime-left, .anime-image{
@@ -125,6 +135,9 @@
   text-align: center;
 }
 
+.anime-genres{
+  position:absolute;
+}
 .btn-genre{
   font-size: 1.4rem;
   border-radius: 25px;

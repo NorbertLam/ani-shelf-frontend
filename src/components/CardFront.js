@@ -47,11 +47,13 @@ export class CardFront extends Component {
               <img className="anime-image" src={image}  alt="" />
           </div>
           <div className="anime-right">
-              <div>
+              <div className="anime-details">
                   <h2>Ep 1 airs: {month.join(" ")}</h2>
-                  <p>{this.props.animeObj.desc}</p>
-                  {genres}
-                  <input type="image" className="heart" src={this.state.heart} onClick={this.favoriteHandler}/>
+                  <p className="anime-desc">{this.props.animeObj.desc}</p>
+                  <span className="anime-genres">
+                    {genres}
+                    <input type="image" className="heart" src={this.state.heart} onClick={this.favoriteHandler}/>
+                  </span>
               </div>
           </div>
       </div>
