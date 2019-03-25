@@ -5,9 +5,11 @@ class LoginContainer extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1>Log In</h1>
-        <LoginForm />
+      <div className="bg-default">
+        <div className="login">
+          <h1>Log In</h1>
+          <LoginForm />
+        </div>
       </div>
     )
   }
