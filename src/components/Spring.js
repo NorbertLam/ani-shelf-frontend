@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
+
 import Container from '../containers/CardContainer'
 
 export class Spring extends Component {
@@ -11,4 +13,4 @@ export class Spring extends Component {
   }
 }
 
-export default Spring
+export default withRouter(Spring);

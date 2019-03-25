@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import Container from '../containers/CardContainer'
 
 export class Fall extends Component {
@@ -11,4 +12,4 @@ export class Fall extends Component {
   }
 }
 
-export default Fall
+export default withRouter(Fall);

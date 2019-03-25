@@ -5,7 +5,7 @@ class SignupContainer extends React.Component {
 
   render () {
     return (
-      <div className="signup-container">
+      <div className="login">
         <h1>SIGN UP</h1>
         <SignupForm />
       </div>

@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
       body: JSON.stringify(userObj)
     })
       .then(resp => resp.json())
-      .then(console.log);
+      .then(userObj => this.props.setLogin(userObj.user, userObj.jwt));
   }
   
   render () {
