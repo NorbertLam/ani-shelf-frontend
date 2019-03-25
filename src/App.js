@@ -6,6 +6,7 @@ import Fall from './components/Fall'
 import Spring from './components/Spring'
 import Winter from './components/Winter'
 import Summer from './components/Summer'
+import Logout from './components/Logout'
 import SignupContainer from './containers/SignupContainer'
 import LoginContainer from './containers/LoginContainer'
 import Nav from './containers/NavBar'
@@ -49,10 +50,17 @@ class App extends Component {
     });
   }
 
+  handleLogout = () => {
+    this.setState({user:{}}, () => {
+      localStorage.removeItem('token');
+      this.props.history.push('/');
+    });
+  }
+
   render() {
     return (
       <div>
-        <Nav/>
+        <Nav user={this.state.user} />
         <Switch>
           <Route path="/winter" component={Winter}/>
           <Route path="/spring" component={Spring}/>
@@ -60,6 +68,7 @@ class App extends Component {
           <Route path="/fall" component={Fall}/>
           <Route path="/signup" component={SignupContainer}/>
           <Route path="/login" render={() => <LoginContainer setLogin={this.setLogin} /> }/>
+          <Route path="/logout" render={() => <Logout handleLogout={this.handleLogout} /> }/>
           <Route exact path="/" component={Home}/>
         </Switch>
     </div>
