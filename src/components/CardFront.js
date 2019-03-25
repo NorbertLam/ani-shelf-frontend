@@ -2,12 +2,24 @@ import React, { Component } from 'react'
 
 export class CardFront extends Component {
     state = {
-        heartStates:{heartFull: "♥",
-        heartEmpty: "♡"},
-        colorStates:{"red" : "",
-        "empty": "red"}
+        favorite: false,
+        heart: "/images/empty_heart.png",
     }
-    
+
+    favoriteHandler = () => {
+        if(this.state.heart === "/images/empty_heart.png"){
+            this.setState({
+                favorite: !this.state.favorite,
+                heart: "/images/full_heart.png"
+            })
+        }else{
+            this.setState({
+                favorite: !this.state.favorite,
+                heart: "/images/empty_heart.png"
+            })
+        }
+    }
+
   render() {
     const image = this.props.animeObj.image;
     const genres = this.props.animeObj.genres.split(',').map(genre => <p key={genre} className="btn-genre">{genre}</p>)
@@ -39,7 +51,7 @@ export class CardFront extends Component {
                   <h2>Ep 1 airs: {month.join(" ")}</h2>
                   <p>{this.props.animeObj.desc}</p>
                   {genres}
-                  <p className="heart">{this.state.heartStates.heartEmpty}</p>
+                  <input type="image" className="heart" src={this.state.heart} onClick={this.favoriteHandler}/>
               </div>
           </div>
       </div>
