@@ -5,9 +5,15 @@ class SignupContainer extends React.Component {
 
   render () {
     return (
-      <div className="login">
-        <h1>SIGN UP</h1>
-        <SignupForm />
+      <div>
+        <video autoPlay loop id="bg-video">
+          <source src="/videos/hero.webm" type="video/webm"/>
+        </video>
+        
+        <div className="login-container">
+          <h1>SIGN UP</h1>
+          <SignupForm handleSignUp={this.props.handleSignUp}/>
+        </div>
       </div>
     )
   }

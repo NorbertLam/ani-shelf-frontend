@@ -32,23 +32,31 @@ class SignUpForm extends React.Component {
       body: JSON.stringify(userObj)
     })
       .then(resp => resp.json())
-      .then(console.log)
+      .then(json => {
+        if (json.error) {
+          alert(json.error);
+        } else {
+          this.props.handleSignUp();
+        }
+      })
   }
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit} >
-        <label>
-          Email: 
-          <input type="text" name="email" value={this.state.email} onChange={this.handleInput} />
-        </label>
-        
-        <label>
-          Password: 
-          <input type="text" name="password" value={this.state.passwordx} onChange={this.handleInput} />
-        </label>
-        <input type="submit" value="Sign Up"/>
-      </form>
+      <div className="form-cont">
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <label>
+            Email: 
+            <input type="text" name="email" value={this.state.email} onChange={this.handleInput} />
+          </label>
+          
+          <label>
+            Password: 
+            <input type="text" name="password" value={this.state.passwordx} onChange={this.handleInput} />
+          </label>
+          <input type="submit" value="Sign Up"/>
+        </form>
+      </div>
     )
   }
 }

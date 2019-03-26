@@ -39,6 +39,10 @@ class App extends Component {
     }
   }
 
+  handleSignUp = () => {
+    return this.props.history.push("/login")
+  }
+
   setLogin = (userObj) => {
     if (userObj.message) {
       return this.props.history.push("/")
@@ -70,7 +74,7 @@ class App extends Component {
           <Route path="/spring" component={Spring}/>
           <Route path="/summer" component={Summer}/>
           <Route path="/fall" component={Fall}/>
-          <Route path="/signup" component={SignupContainer}/>
+          <Route path="/signup" render={() => <SignupContainer handleSignUp={this.handleSignUp} /> }/>
           <Route path="/login" render={() => <LoginContainer setLogin={this.setLogin} /> }/>
           <Route path="/logout" render={() => <Logout handleLogout={this.handleLogout} /> }/>
           <Route exact path="/" component={Home}/>
