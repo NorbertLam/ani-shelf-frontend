@@ -33,8 +33,8 @@ class App extends Component {
         this.setState({ user }, () => {
           this.props.history.push("/spring");
         })
-      })
-    } else {
+      }) 
+    }else {
       this.props.history.push("/login")
     }
   }

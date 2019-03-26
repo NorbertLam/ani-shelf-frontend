@@ -11,8 +11,7 @@ export class AnimeCard extends Component {
     return (
       // <div className="anime-card" onClick={() => this.setState({flipped: !this.state.flipped})} >
       <div className="anime-card">
-        <Front animeObj={this.props.animeObj} />
-        <CardBack animeObj={this.props.animeObj} />
+        <Front animeObj={this.props.animeObj} animeFav={this.props.animeFav} />
       </div>
     )
   }
