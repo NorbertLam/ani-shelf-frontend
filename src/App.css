@@ -10,6 +10,15 @@
   position:relative;
 }
 
+.china{
+  position:absolute;
+  bottom:0;
+  right:0;
+  height:10%;
+  width:5%;
+  z-index:200;
+}
+
 /*navbar*/
 
 #navbar{
@@ -103,12 +112,18 @@
   float:left;
   height:22.7rem;
   width:50%;
-  overflow:auto;
 }
 
 .anime-details{
-  height:inherit;
   position:relative;
+  
+}
+
+.anime-desc{
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  height:17rem;
+  overflow:auto;
 }
 
 .anime-left, .anime-image{
@@ -137,6 +152,8 @@
   text-align: center;
 }
 
+
+
 .btn-genre{
   font-size: 1.4rem;
   border-radius: 25px;
@@ -145,6 +162,7 @@
   padding: 0px 1rem;
   display: inline-block;
   margin-right:5px;
+  margin-top:2px;
 }
 
 .heart{
@@ -152,6 +170,10 @@
   width:25px;
   border: none;
   outline:none;
+  position:absolute;
+  bottom: 6px;
+  right: -8px;
+
 }
 
 /*login and signup */

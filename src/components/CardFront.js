@@ -50,10 +50,10 @@ export class CardFront extends Component {
               <div className="anime-details">
                   <h2>Ep 1 airs: {month.join(" ")}</h2>
                   <p className="anime-desc">{this.props.animeObj.desc}</p>
-                  <span className="anime-genres">
+              </div>
+              <div className="anime-genres">
                     {genres}
                     <input type="image" className="heart" src={this.state.heart} onClick={this.favoriteHandler}/>
-                  </span>
               </div>
           </div>
       </div>
