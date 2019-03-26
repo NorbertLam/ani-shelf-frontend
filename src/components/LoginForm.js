@@ -40,8 +40,8 @@ class LoginForm extends React.Component {
     return (
       <div className="form-cont">
         <form className="login-form" onSubmit={this.handleLogin}>
-          <input placeholder="E-Mail Address" type="text" name="email" value={this.state.email} onChange={this.handleInput} />
-          <input placeholder="Password" type="password" name="password" value={this.state.password} onChange={this.handleInput} />
+          <input className="textbox" placeholder="E-Mail Address" autocomplete="off" type="email" name="email" value={this.state.email} onChange={this.handleInput} />
+          <input className ="textbox" placeholder="Password" type="password" name="password" value={this.state.password} onChange={this.handleInput} />
           <input className="form-submit" type="submit" value="Login" />
         </form>
       </div>
