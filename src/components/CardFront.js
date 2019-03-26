@@ -7,14 +7,16 @@ export class CardFront extends Component {
     }
 
     componentDidMount(){
-        this.props.animeFav.forEach(anime => {
-            if(this.props.animeObj.id === anime.anime_id){
-                this.setState({
-                    favorite: true,
-                    heart: "/images/full_heart.png"
-                })
-            }
-        })
+        if (this.props.animeFav) {
+            this.props.animeFav.forEach(anime => {
+                if(this.props.animeObj.id === anime.anime_id){
+                    this.setState({
+                        favorite: true,
+                        heart: "/images/full_heart.png"
+                    })
+                }
+            })
+        }
     }
 
     favoriteHandler = (anime) => {
