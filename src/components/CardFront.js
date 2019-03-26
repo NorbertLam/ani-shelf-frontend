@@ -6,12 +6,33 @@ export class CardFront extends Component {
         heart: "/images/empty_heart.png",
     }
 
-    favoriteHandler = () => {
+    componentDidMount(){
+        this.props.animeFav.forEach(anime => {
+            if(this.props.animeObj.id === anime.anime_id){
+                this.setState({
+                    favorite: true,
+                    heart: "/images/full_heart.png"
+                })
+            }
+        })
+    }
+
+    favoriteHandler = (anime) => {
         if(this.state.heart === "/images/empty_heart.png"){
+                fetch("http://localhost:3000/favorites",{
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                        Accept: 'application/json',
+                        Authorization: localStorage.token
+                    },
+                    body:JSON.stringify({anime_id:anime})
+                })
             this.setState({
                 favorite: !this.state.favorite,
                 heart: "/images/full_heart.png"
             })
+            
         }else{
             this.setState({
                 favorite: !this.state.favorite,
@@ -19,7 +40,7 @@ export class CardFront extends Component {
             })
         }
     }
-
+    
   render() {
     const image = this.props.animeObj.image;
     const genres = this.props.animeObj.genres.split(',').map(genre => <p key={genre} className="btn-genre">{genre}</p>)
@@ -53,7 +74,7 @@ export class CardFront extends Component {
               </div>
               <div className="anime-genres">
                     {genres}
-                    <input type="image" className="heart" src={this.state.heart} onClick={this.favoriteHandler}/>
+                    <input type="image" className="heart" src={this.state.heart} onClick={() => this.favoriteHandler(this.props.animeObj.id)}/>
               </div>
           </div>
       </div>

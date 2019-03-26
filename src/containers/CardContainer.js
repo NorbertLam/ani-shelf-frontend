@@ -6,7 +6,8 @@ export class CardContainer extends Component {
         SPRING: [],
         SUMMER: [],
         FALL: [],
-        WINTER: []
+        WINTER: [],
+        favorites: []
     }
     componentWillMount(){
         fetch('http://localhost:3000/animes')
@@ -29,10 +30,21 @@ export class CardContainer extends Component {
                 WINTER: winter
             })
         })
-    }
+        fetch('http://localhost:3000/hearts', {
+          method: "GET",
+            headers: {
+              "content-type": "application/json",
+              accepts: "application/json",
+              Authorization: localStorage.token
+            }
+          })
+        .then(resp => resp.json())
+        .then(animes => {
+          this.setState({favorites: animes})
+          })
+        }
   render() {
-    const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} /> : null )
-
+    const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} animeFav={this.state.favorites.animes} /> : null )
     return (
       <div className="container">
         {cardArr}
