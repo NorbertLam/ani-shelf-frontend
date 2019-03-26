@@ -11,7 +11,6 @@ class SignupContainer extends React.Component {
         </video>
         
         <div className="login-container">
-          <h1>SIGN UP</h1>
           <SignupForm handleSignUp={this.props.handleSignUp}/>
         </div>
       </div>

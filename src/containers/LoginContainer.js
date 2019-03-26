@@ -12,7 +12,6 @@ class LoginContainer extends React.Component {
         </video>
         
         <div className="login-container" >
-          <h1>Log In</h1>
           <LoginForm setLogin={this.props.setLogin} />
         </div>
       </div>
