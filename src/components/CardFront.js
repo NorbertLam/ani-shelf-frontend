@@ -83,8 +83,8 @@ export class CardFront extends Component {
           </div>
           <div className="anime-right">
               <div className="anime-details">
-                  <h2>Ep 1 airs: {month.join(" ")}</h2>
-                  <p className="anime-desc">{this.props.animeObj.desc}</p>
+                  <h2>Ep 1 airs: {month.join(" ").replace('null', '')}</h2>
+                  <p className="anime-desc">{this.props.animeObj.desc !== 'null' ? this.props.animeObj.desc : 'No Description Available!'}</p>
               </div>
               <div className="anime-genres">
                     {genres}
