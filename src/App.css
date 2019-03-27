@@ -145,7 +145,8 @@ h2{
 .anime-genres{
   display:flex;
   flex-wrap: wrap;
-  align-content: center;
+  width: 23.3rem;
+
 }
 
 .btn-genre{
