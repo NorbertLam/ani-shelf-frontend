@@ -186,15 +186,15 @@ h2{
   display:flex;
   flex-direction: column;
   justify-content: center;
-  transform: translateY(18rem);
+  transform: translateY(25rem);
   animation-name: fade-in;
   animation-duration: 0.8s;
 }
 
 @keyframes fade-in{
-  from{transform: translateY(10rem); 
+  from{transform: translateY(15rem); 
       opacity:0;}
-  to{transform: translateY(18rem); 
+  to{transform: translateY(25rem); 
       opacity:1;}
 }
 
@@ -215,40 +215,6 @@ h2{
   outline:none;
 }
 
-/*rotate*/
-
-.back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
-  width: 100%;
-  position: absolute;
-  background: white;
-  line-height: 300px;
-  color: #03446A;
-  text-align: center;
-  font-size: 60px;
-  border-radius: 5px;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-}
-
-.front {
-  /* backface-visibility: hidden; */
-  transform: none;
-  transition: all 0.3s ease-in-out;
-}
-
-/* .front:active, .front:focus {
-  transform: rotateY(180deg);
-} */
-
-.trailer {
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-
-}
 .form-submit{
   display:inline-block;
   padding: 1.5rem 2rem;
@@ -273,7 +239,3 @@ h2{
   transform: translateY(-.1rem);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
 }
-
-/* .flip{
-  position:absolute;
-} */

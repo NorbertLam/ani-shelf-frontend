@@ -70,7 +70,7 @@ export class CardFront extends Component {
         case "9": month.splice(0,1, "September"); break;    
         case "10": month.splice(0,1, "October"); break;    
         case "11": month.splice(0,1, "November"); break;    
-        case "12": month.splice(0,1, "December"); break;    
+        case "12": month.splice(0,1, "December"); break;   
     }
     
     return (
@@ -79,7 +79,7 @@ export class CardFront extends Component {
           <div  className="anime-title-container">
                 <p className="anime-title">{this.props.animeObj.title}</p>
               </div>
-              <img className="anime-image" src={image}  alt="" />
+              <img className="anime-image" src={image} alt="anime-cover"/>
           </div>
           <div className="anime-right">
               <div className="anime-details">
@@ -88,7 +88,7 @@ export class CardFront extends Component {
               </div>
               <div className="anime-genres">
                     {genres}
-                    <input type="image" className="heart" src={this.state.heart} onClick={() => this.favoriteHandler(this.props.animeObj.id)}/>
+                    <input type="image" className="heart" alt="heart" src={this.state.heart} onClick={() => this.favoriteHandler(this.props.animeObj.id)}/>
               </div>
           </div>
       </div>

@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
         <form className="the-form" onSubmit={this.handleLogin}>
           <label className="form-label">Log in:</label> 
           <br/>
-          <input className="form-input" placeholder="E-Mail Address" autocomplete="off" type="email" name="email" value={this.state.email} onChange={this.handleInput} />
+          <input className="form-input" placeholder="E-Mail Address" autoComplete="off" type="email" name="email" value={this.state.email} onChange={this.handleInput} />
           <br/>
           <label className="form-label">Password:</label>
           <br/>

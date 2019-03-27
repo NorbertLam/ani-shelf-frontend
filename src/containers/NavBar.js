@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
-  let port = window.location.href.slice(17, 21);
   return (
     <nav id="navbar">
       <NavLink className="nav-item" to="/winter">Winter <br/> <span className="nav-item-year">2019</span></NavLink>
