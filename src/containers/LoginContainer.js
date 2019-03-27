@@ -6,14 +6,11 @@ class LoginContainer extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="login-container">
         <video autoPlay loop id="bg-video">
           <source src="/videos/hero.webm" type="video/webm"/>
         </video>
-        
-        <div className="login-container" >
-          <LoginForm setLogin={this.props.setLogin} />
-        </div>
+        <LoginForm setLogin={this.props.setLogin} />
       </div>
     )
   }

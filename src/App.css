@@ -1,6 +1,6 @@
 *{
   font-size: 62.5%;
-  font-family: Overpass,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-family: Overpass, Helvetica,sans-serif;
   -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
@@ -8,15 +8,6 @@
 
 .main-container{
   position:relative;
-}
-
-.china{
-  position:absolute;
-  bottom:0;
-  right:0;
-  height:10%;
-  width:5%;
-  z-index:200;
 }
 
 /*navbar*/
@@ -47,12 +38,17 @@
   opacity: 0.65;
   transition: opacity 0.3s ease-in-out;
   font-family: inherit;
-  z-index:5;
+  z-index: 2;
+  transform: translateX(11rem);
 }
 
 .nav-item-year{
   font-size: 1rem;
   text-align: center;
+}
+
+.nav-user{
+  transform: translateX(42rem);
 }
 /* container */
 
@@ -68,16 +64,7 @@
 }
 
 #bg-video{
-  z-index: 3;
-  opacity: 1;
   position:fixed;
-}
-
-.bg-season{
-  z-index: -1;
-  position:fixed;
-  opacity: 0.85;
-  height: 100vh;
   width: 100vw;
 }
 
@@ -105,18 +92,17 @@
   width:50%
 }
 .anime-right{
+  float:left;
   display:inline-block;
   position:relative;
   word-wrap: none;
   padding: 2rem 1.5rem;
-  float:left;
   height:22.7rem;
   width:50%;
 }
 
 .anime-details{
   position:relative;
-  
 }
 
 .anime-desc{
@@ -152,8 +138,6 @@
   text-align: center;
 }
 
-
-
 .btn-genre{
   font-size: 1.4rem;
   border-radius: 25px;
@@ -177,66 +161,48 @@
 }
 
 /*login and signup */
-.bg-default{
-  background: #eee;
-  position: relative;
+
+.form-container{
+  position:relative;
+  display:flex;
+  justify-content: center;
   height: 100vh;
-  width: 100vw;
+  background: rgba(0,0,0,0.5);
+  width:27.5vw;
+  transition: all .3s;
 }
-
-.login{
-  z-index: 4;
-  height:50vh;
-  width:25vw;
-  background: white;
-  font-size: 5rem;
-  box-shadow: 2px 2px 4px #555;
-  transform: translate(150%, 50%)
-}
-
-.login-container {
-  z-index: 6;
-  display: flex;
+.the-form{
+  position:absolute;
+  display:flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 50vw;
+  transform: translateY(18rem);
+  animation-name: fade-in;
+  animation-duration: 0.8s;
 }
 
-.form-cont {
-  z-index: 6;
-  text-align: center;
-  display: flex;
-  background:linear-gradient(45deg, #19547b , #516395);
-  opacity: .95;
-  padding: 5vw;
+@keyframes fade-in{
+  from{transform: translateY(10rem); 
+      opacity:0;}
+  to{transform: translateY(18rem); 
+      opacity:1;}
 }
 
-.form-submit {
-  z-index: 7;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 40px;
-  background: linear-gradient(45deg, #B388EB, #8093F1);
-  border-radius: 20px;
-  color: #FFF;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 200;
+.form-label{
+  color:white;
+  font-size: 2.5rem;
+}
+.form-input{
+  font-size: 2rem;
+  border: solid black;
+  box-shadow: 3px 2px 25px #fff;
+  border-radius: 6px;
+  padding: .5rem;
+  width: 22vw;
 }
 
-input {
-  display: flex;
-	flex-direction: row-reverse;
-	border-bottom: 1px solid rgba(#FFFCE8, .1);
-	padding-bottom: 3px;
-  margin-bottom: 5px;
-	flex: 1 0 auto;
-	font-size: 34px;
-  font-weight: 300;
-  height: 60px;
+.form-input:focus{
+  outline:none;
 }
 
 .back {
@@ -269,15 +235,30 @@ input {
 .trailer {
   backface-visibility: hidden;
   transform: rotateY(180deg);
+
+}
+.form-submit{
+  display:inline-block;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  border: none;
+  transition: all .2s;
+  text-transform: uppercase;
+  cursor:pointer;
+  position:relative;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
-/* .placehold {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10vw;
-} */
-
-.no-trailer {
-  display: flex;
+.form-submit:hover{
+  transform: translateY(-.5rem);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
 }
+
+.form-submit:active,.form-submit:focus{
+  outline:none;
+  transform: translateY(-.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+}
+
