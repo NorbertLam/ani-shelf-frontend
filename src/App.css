@@ -6,6 +6,10 @@
   margin: 0;
 }
 
+h2{
+  font-size:1.2rem;
+}
+
 .main-container{
   position:relative;
 }
@@ -73,7 +77,7 @@
   border-radius: 3px;
   position: relative;
   justify-content: center;
-  box-shadow: 0 5px 4px #ddd;
+  box-shadow: 1px 5px 4px #ddd;
   width: 46.1rem;
   height: 26.7rem;
   margin-top: 5rem;
@@ -81,7 +85,7 @@
 }
 
 .anime-card:hover{
-  box-shadow: 5px 20px  10px #aaa;
+  box-shadow: 5px 20px  10px #444;
 }
 
 /* card front */
