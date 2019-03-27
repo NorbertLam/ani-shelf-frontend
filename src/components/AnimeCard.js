@@ -7,7 +7,7 @@ export class AnimeCard extends Component {
     return (
       <div className="anime-card">
         <Front animeObj={this.props.animeObj} animeFav={this.props.animeFav} />
-        <Back animeObj={this.props.animeObj} />
+        {/* <Back animeObj={this.props.animeObj} /> */}
       </div>
     )
   }

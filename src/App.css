@@ -229,12 +229,12 @@ h2{
 .front {
   /* backface-visibility: hidden; */
   transform: none;
+  transition: all 0.3s ease-in-out;
 }
 
-.front:hover {
+/* .front:active, .front:focus {
   transform: rotateY(180deg);
-  transition: transform 0.5s;
-}
+} */
 
 .trailer {
   backface-visibility: hidden;
@@ -266,3 +266,6 @@ h2{
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
 }
 
+.flip{
+  position:absolute;
+}

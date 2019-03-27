@@ -77,6 +77,7 @@ export class CardFront extends Component {
     }
     return (
       <div className="front">
+        <input type="checkbox" className="flip"></input>
           <div className="anime-left">
           <div  className="anime-title-container">
                 <p className="anime-title">{this.props.animeObj.title}</p>
