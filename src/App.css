@@ -1,6 +1,6 @@
 *{
   font-size: 62.5%;
-  font-family: Overpass,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-family: Overpass, Helvetica,sans-serif;
   -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
@@ -205,6 +205,8 @@
   cursor:pointer;
   position:relative;
   font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
 .form-submit:hover{
