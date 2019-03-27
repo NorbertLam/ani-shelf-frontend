@@ -9,11 +9,13 @@ export class CardContainer extends Component {
         WINTER: [],
         favorites: []
     }
-    componentWillMount(){
+    
+    componentWillMount() {
         fetch('http://localhost:3000/animes')
         .then(resp => resp.json())
         .then(animes => {
             let spring = [], summer = [], fall = [], winter = []
+            
             animes.forEach(anime => {
                 switch(anime.season){
                     case "SPRING": spring.push(anime); break;
@@ -22,15 +24,22 @@ export class CardContainer extends Component {
                     case "FALL": fall.push(anime); break;
                     default: break;
                 }
-            })
-            this.setState({
-                SPRING: spring,
-                SUMMER: summer,
-                FALL: fall,
-                WINTER: winter
-            })
-        })
-        fetch('http://localhost:3000/hearts', {
+            }) 
+            this.fetchFavAnimes().then(animes => {
+              
+              this.setState({
+                  SPRING: spring,
+                  SUMMER: summer,
+                  FALL: fall,
+                  WINTER: winter,
+                  favorites: animes
+              })
+            });
+        })    
+    }
+
+    fetchFavAnimes  = () => {
+      return fetch('http://localhost:3000/hearts', {
           method: "GET",
             headers: {
               "content-type": "application/json",
@@ -38,18 +47,17 @@ export class CardContainer extends Component {
               Authorization: localStorage.token
             }
           })
-        .then(resp => resp.json())
-        .then(animes => {
-          this.setState({favorites: animes})
-          })
-        }
-  render() {
-    const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} animeFav={this.state.favorites.animes} /> : null )
-    return (
-      <div className="container">
-        {cardArr}
-      </div>
-    )
+        .then(resp => resp.json());
+    }
+  
+    render() {
+      const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} animeFav={this.state.favorites.animes} /> : null )
+      
+      return (
+        <div className="container">
+          {cardArr}
+        </div>
+      )
   }
 }
 
