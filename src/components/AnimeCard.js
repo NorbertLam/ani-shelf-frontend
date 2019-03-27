@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Front from './CardFront'
-import CardBack from './CardBack'
+import Back from './CardBack'
 
 export class AnimeCard extends Component {
   state = {
@@ -12,6 +12,7 @@ export class AnimeCard extends Component {
       // <div className="anime-card" onClick={() => this.setState({flipped: !this.state.flipped})} >
       <div className="anime-card">
         <Front animeObj={this.props.animeObj} animeFav={this.props.animeFav} />
+        <Back animeObj={this.props.animeObj} />
       </div>
     )
   }
