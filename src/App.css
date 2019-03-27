@@ -169,13 +169,23 @@
   height: 100vh;
   background: rgba(0,0,0,0.5);
   width:27.5vw;
+  transition: all .3s;
 }
 .the-form{
   position:absolute;
   display:flex;
   flex-direction: column;
   justify-content: center;
-  transform: translateY(18rem)
+  transform: translateY(18rem);
+  animation-name: fade-in;
+  animation-duration: 0.8s;
+}
+
+@keyframes fade-in{
+  from{transform: translateY(10rem); 
+      opacity:0;}
+  to{transform: translateY(18rem); 
+      opacity:1;}
 }
 
 .form-label{
