@@ -170,7 +170,7 @@ h2{
 
 }
 
-/*login and signup */
+/*login*/
 
 .form-container{
   position:relative;
@@ -238,4 +238,21 @@ h2{
   outline:none;
   transform: translateY(-.1rem);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+}
+
+/*sign up*/
+
+.signup-container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  transition: all .3s;
+}
+
+.signup-form{
+  display:flex 1;
+  flex-direction: column;
+  margin-top: 5rem;
 }

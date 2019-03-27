@@ -43,8 +43,8 @@ class SignUpForm extends React.Component {
 
   render () {
     return (
-      <div className="form-container">
-        <form onSubmit={this.handleSubmit} className="the-form">
+      <div className="signup-container">
+        <form onSubmit={this.handleSubmit} className="the-form signup-form">
         <label className="form-label">E-Mail Address:</label> 
           <br/>
           <input className="form-input" placeholder="E-Mail Address" autoComplete="off" type="email" name="email" value={this.state.email} onChange={this.handleInput} />

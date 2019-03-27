@@ -7,7 +7,7 @@ class SignupContainer extends React.Component {
     return (
       <div>
         <video autoPlay loop id="bg-video">
-          <source src="/videos/hero.webm" type="video/webm"/>
+          <source src="/videos/signup.mp4" type="video/mp4"/>
         </video>
         
         <div className="login-container">
