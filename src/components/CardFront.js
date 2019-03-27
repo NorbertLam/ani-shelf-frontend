@@ -41,7 +41,7 @@ export class CardFront extends Component {
                         })
                     })
                 
-            }else{
+            } else {
                 fetch(`http://localhost:3000/unheart/${this.state.fav.id}`,{
                         method: 'DELETE',
                         headers: {
@@ -61,6 +61,7 @@ export class CardFront extends Component {
     const image = this.props.animeObj.image;
     const genres = this.props.animeObj.genres.split(',').map(genre => <p key={genre} className="btn-genre">{genre}</p>)
     const month = this.props.animeObj.start_date.split(" ");
+    
     switch(this.props.animeObj.start_date.split(" ")[0]){
         case "1": month.splice(0,1, "January"); break;    
         case "2": month.splice(0,1, "February"); break;    
@@ -75,6 +76,7 @@ export class CardFront extends Component {
         case "11": month.splice(0,1, "November"); break;    
         case "12": month.splice(0,1, "December"); break;    
     }
+    
     return (
       <div className="front">
         <input type="checkbox" className="flip"></input>
