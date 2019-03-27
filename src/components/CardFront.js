@@ -8,17 +8,13 @@ export class CardFront extends Component {
     }
 
     componentDidMount(){
-        if (this.props.animeFav) {
-            this.props.animeFav.forEach(anime => {
-                if(this.props.animeObj.id === anime.anime_id){
-                    this.setState({
-                        favorite: true,
-                        heart: "/images/full_heart.png"
-                    })
-                }
+        if (this.props.animeFav.has(this.props.animeObj.id )) {
+            this.setState({
+                favorite: true,
+                heart: "/images/full_heart.png"
             })
-        }
     }
+}
 
     favoriteHandler = (anime) => {
         if (localStorage.token) {
@@ -59,7 +55,7 @@ export class CardFront extends Component {
     
   render() {
     const image = this.props.animeObj.image;
-    const genres = this.props.animeObj.genres.split(',').map(genre => <p key={genre} className="btn-genre">{genre}</p>)
+    const genres = this.props.animeObj.genres.split(',').map(genre => <p key={genre} className="btn-genre">{genre}</p>);
     const month = this.props.animeObj.start_date.split(" ");
     
     switch(this.props.animeObj.start_date.split(" ")[0]){
@@ -100,4 +96,4 @@ export class CardFront extends Component {
   }
 }
 
-export default CardFront
+export default CardFront;

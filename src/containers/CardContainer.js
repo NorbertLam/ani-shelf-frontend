@@ -26,13 +26,20 @@ export class CardContainer extends Component {
                 }
             }) 
             this.fetchFavAnimes().then(animes => {
-              
+              const favAnimes = new Set();
+
+              if (localStorage.token) {
+                animes.animes.forEach(anime => {
+                  favAnimes.add(anime.anime_id);
+                })
+              }
+
               this.setState({
                   SPRING: spring,
                   SUMMER: summer,
                   FALL: fall,
                   WINTER: winter,
-                  favorites: animes
+                  favorites: favAnimes
               })
             });
         })    
@@ -51,7 +58,7 @@ export class CardContainer extends Component {
     }
   
     render() {
-      const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} animeFav={this.state.favorites.animes} /> : null )
+      const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} animeFav={this.state.favorites} /> : null )
       
       return (
         <div className="container">
