@@ -21,38 +21,39 @@ export class CardFront extends Component {
     }
 
     favoriteHandler = (anime) => {
-        if(this.state.heart === "/images/empty_heart.png"){
-                fetch("http://localhost:3000/favorites",{
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json',
-                        Accept: 'application/json',
-                        Authorization: localStorage.token
-                    },
-                    body:JSON.stringify({anime_id:anime})
-                })
-                .then(resp => resp.json())
-                .then(favObj => {
-                    this.setState({
-                        favorite: !this.state.favorite,
-                        heart: "/images/full_heart.png",
-                        fav: favObj.favorite
+        if (localStorage.token) {
+            if(this.state.heart === "/images/empty_heart.png"){
+                    fetch("http://localhost:3000/favorites",{
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json',
+                            Accept: 'application/json',
+                            Authorization: localStorage.token
+                        },
+                        body:JSON.stringify({anime_id:anime})
                     })
-                })
-            
-        }else{
-            fetch(`http://localhost:3000/unheart/${this.state.fav.id}`,{
-                    method: 'DELETE',
-                    headers: {
-                        'Content-type': 'application/json',
-                        Accept: 'application/json',
-                        Authorization: localStorage.token
-                    }
-                }).then(this.setState({
-                    favorite: !this.state.favorite,
-                    heart: "/images/empty_heart.png"
-                }))
-            
+                    .then(resp => resp.json())
+                    .then(favObj => {
+                        this.setState({
+                            favorite: !this.state.favorite,
+                            heart: "/images/full_heart.png",
+                            fav: favObj.favorite
+                        })
+                    })
+                
+            }else{
+                fetch(`http://localhost:3000/unheart/${this.state.fav.id}`,{
+                        method: 'DELETE',
+                        headers: {
+                            'Content-type': 'application/json',
+                            Accept: 'application/json',
+                            Authorization: localStorage.token
+                        }
+                    }).then(this.setState({
+                        favorite: !this.state.favorite,
+                        heart: "/images/empty_heart.png"
+                    }))
+            }
         }
     }
     
@@ -75,7 +76,7 @@ export class CardFront extends Component {
         case "12": month.splice(0,1, "December"); break;    
     }
     return (
-      <div>
+      <div className="front">
           <div className="anime-left">
           <div  className="anime-title-container">
                 <p className="anime-title">{this.props.animeObj.title}</p>

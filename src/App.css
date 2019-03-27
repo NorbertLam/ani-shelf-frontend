@@ -209,6 +209,38 @@ h2{
   outline:none;
 }
 
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  background: white;
+  line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.front {
+  /* backface-visibility: hidden; */
+  transform: none;
+}
+
+.front:hover {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.trailer {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+
+}
 .form-submit{
   display:inline-block;
   padding: 1.5rem 2rem;

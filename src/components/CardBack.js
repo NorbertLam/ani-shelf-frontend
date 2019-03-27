@@ -5,7 +5,7 @@ const CardBack = (props) => {
 
   if (props.animeObj.trailer_site !== 'null') {
     trailerUrl = `https://www.youtube.com/embed/${props.animeObj.trailer_id}`
-    return <iframe className="trailer" src={trailerUrl}> </iframe>
+    return <div className="back"><iframe className="trailer" src={trailerUrl}></iframe></div>
   }
   return (
     <div className="placehold">
