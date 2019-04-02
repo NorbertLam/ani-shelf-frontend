@@ -1,47 +1,258 @@
-.App {
+*{
+  font-size: 62.5%;
+  font-family: Overpass, Helvetica,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+}
+
+h2{
+  font-size:1.2rem;
+}
+
+.main-container{
+  position:relative;
+}
+
+/*navbar*/
+
+#navbar{
+  position:absolute;
+  display:flex;
+  font-size:3rem;
+  justify-content: center;
+  width: 100vw;
+  background-color:rgb(43,43,68);
+  padding-bottom: 15rem;
+  font-weight: 600;
+  padding-top: 5rem;
+}
+
+.nav-item:hover{
+  opacity: 1;
+}
+
+.nav-item{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  margin-right: 4rem;
+  color: white;
+  opacity: 0.65;
+  transition: opacity 0.3s ease-in-out;
+  font-family: inherit;
+  z-index: 2;
+  transform: translateX(11rem);
+}
+
+.nav-item-year{
+  font-size: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.nav-user{
+  transform: translateX(42rem);
+}
+/* container */
+
+.container{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  background: rgb(234,239,244);
+  padding: 0 15rem;
+  padding-top: 13rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#bg-video{
+  position:fixed;
+  width: 100vw;
 }
 
 .anime-card{
-  background: lightblue;
-  display: inline-block;
-  box-shadow: 2px 2px 4px #555;
+  background: white;
+  border-radius: 3px;
+  position: relative;
+  justify-content: center;
+  box-shadow: 1px 5px 4px #ddd;
+  width: 46.1rem;
+  height: 26.7rem;
+  margin-top: 5rem;
+  transition: all .3s;
+}
+
+.anime-card:hover{
+  box-shadow: 5px 20px  10px #444;
+}
+
+/* card front */
+
+.anime-left{
+  position:relative;
+  float:left;
+  width:50%
+}
+.anime-right{
+  float:left;
+  display:inline-block;
+  position:relative;
+  word-wrap: none;
+  padding: 2rem 1.5rem;
+  height:22.7rem;
+  width:50%;
+}
+
+.anime-details{
+  position:relative;
+}
+
+.anime-desc{
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  height:15.5rem;
+  overflow:auto;
+}
+
+.anime-left, .anime-image{
+  display:inline-block;
+  width:18.5rem;
+  height:26.7rem;
 }
 
 .anime-image{
-  float:left;
+  border-radius: 3px;
 }
 
-.anime-front{
-  float:left
+.anime-title-container{
+  position:absolute;
+  bottom:0;
+  background: rgba(0,0,0,0.5);
+  color:white;
+  height: 30%;
+  width: 18.5rem;
+  overflow:auto;
+}
+
+.anime-title{
+  font-size: 2rem;
+  font-weight: 600px;
+  text-align: center;
+}
+
+.anime-genres{
+  display:flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.btn-genre{
+  font-size: 1.4rem;
+  border-radius: 25px;
+  background:rgb(101,48,141);
+  color:white;
+  padding: 0px 1rem;
+  display: inline-block;
+  margin-right:5px;
+  margin-top:2px;
+}
+
+.heart{
+  height:25px;
+  width:25px;
+  border: none;
+  outline:none;
+  position:absolute;
+  bottom: 6px;
+  right: -8px;
+
+}
+
+/*login*/
+
+.form-container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  width:27.5vw;
+  transition: all .3s;
+}
+.the-form{
+  position:absolute;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(25rem);
+  animation-name: fade-in;
+  animation-duration: 0.8s;
+}
+
+@keyframes fade-in{
+  from{transform: translateY(15rem); 
+      opacity:0;}
+  to{transform: translateY(25rem); 
+      opacity:1;}
+}
+
+.form-label{
+  color:white;
+  font-size: 2.5rem;
+}
+.form-input{
+  font-size: 2rem;
+  border: solid black;
+  box-shadow: 3px 2px 25px #fff;
+  border-radius: 6px;
+  padding: .5rem;
+  width: 22vw;
+}
+
+.form-input:focus{
+  outline:none;
+}
+
+.form-submit{
+  display:inline-block;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  border: none;
+  transition: all .2s;
+  text-transform: uppercase;
+  cursor:pointer;
+  position:relative;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.form-submit:hover{
+  transform: translateY(-.5rem);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+}
+
+.form-submit:active,.form-submit:focus{
+  outline:none;
+  transform: translateY(-.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+}
+
+/*sign up*/
+
+.signup-container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  transition: all .3s;
+}
+
+.signup-form{
+  display:flex 1;
+  flex-direction: column;
+  margin-top: 5rem;
 }
