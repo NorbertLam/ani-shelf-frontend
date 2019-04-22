@@ -2,6 +2,10 @@
   "name": "ani-shelf-frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.5.0-next.0",
+    "node": "v11.6.0"
+  },
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",

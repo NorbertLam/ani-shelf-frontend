@@ -1,7 +1,7 @@
 import React from 'react';
 
 class SignUpForm extends React.Component {
-  
+
   state = {
     email: '',
     password: ''
@@ -13,7 +13,7 @@ class SignUpForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    
+
     const userObj = {
       email: this.state.email,
       password: this.state.password
@@ -23,7 +23,7 @@ class SignUpForm extends React.Component {
   }
 
   postUserObj = (userObj) => {
-    fetch('http://localhost:3000/users', {
+    fetch('https://anishelf-backend.herokuapp.com/users', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -45,11 +45,11 @@ class SignUpForm extends React.Component {
     return (
       <div className="signup-container">
         <form onSubmit={this.handleSubmit} className="the-form signup-form">
-        <label className="form-label">E-Mail Address:</label> 
+        <label className="form-label">E-Mail Address:</label>
           <br/>
           <input className="form-input" placeholder="E-Mail Address" autoComplete="off" type="email" name="email" value={this.state.email} onChange={this.handleInput} />
           <br/>
-          <label className="form-label">Password:</label> 
+          <label className="form-label">Password:</label>
           <br/>
           <input className="form-input" placeholder="Password" type="password" name="password" value={this.state.password} onChange={this.handleInput} />
           <br/>

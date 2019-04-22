@@ -20,7 +20,7 @@ class App extends Component {
     const token = localStorage.token;
 
     if (token) {
-      fetch('http://localhost:3000/current_user', {
+      fetch('https://anishelf-backend.herokuapp.com/current_user', {
         method: "GET",
           headers: {
             "content-type": "application/json",
@@ -33,7 +33,7 @@ class App extends Component {
         this.setState({ user }, () => {
           this.props.history.push("/spring");
         })
-      }) 
+      })
     }else {
       this.props.history.push("/login")
     }

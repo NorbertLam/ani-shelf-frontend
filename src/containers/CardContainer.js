@@ -9,13 +9,13 @@ export class CardContainer extends Component {
         WINTER: [],
         favorites: []
     }
-    
+
     componentWillMount() {
-        fetch('http://localhost:3000/animes')
+        fetch('https://anishelf-backend.herokuapp.com/animes')
         .then(resp => resp.json())
         .then(animes => {
             let spring = [], summer = [], fall = [], winter = []
-            
+
             animes.forEach(anime => {
                 switch(anime.season){
                     case "SPRING": spring.push(anime); break;
@@ -24,7 +24,7 @@ export class CardContainer extends Component {
                     case "FALL": fall.push(anime); break;
                     default: break;
                 }
-            }) 
+            })
             this.fetchFavAnimes().then(animes => {
               const favAnimes = new Set();
 
@@ -42,11 +42,11 @@ export class CardContainer extends Component {
                   favorites: favAnimes
               })
             });
-        })    
+        })
     }
 
     fetchFavAnimes  = () => {
-      return fetch('http://localhost:3000/hearts', {
+      return fetch('https://anishelf-backend.herokuapp.com/hearts', {
           method: "GET",
             headers: {
               "content-type": "application/json",
@@ -56,10 +56,10 @@ export class CardContainer extends Component {
           })
         .then(resp => resp.json());
     }
-  
+
     render() {
       const cardArr = this.state[this.props.season].map(anime => !anime.genres.includes('Hentai') ? <Card key={anime.anime_id} animeObj={anime} animeFav={this.state.favorites} /> : null )
-      
+
       return (
         <div className="container">
           {cardArr}

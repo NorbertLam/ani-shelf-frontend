@@ -6,12 +6,12 @@ class LoginForm extends React.Component {
     email: '',
     password: ''
   }
-  
+
   handleInput = event => {
     this.setState({[event.target.name]: event.target.value});
   }
-  
-  
+
+
   handleLogin = event => {
     event.preventDefault();
 
@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
   }
 
   getUserObj = userObj => {
-    fetch('http://localhost:3000/login', {
+    fetch('https://anishelf-backend.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -35,12 +35,12 @@ class LoginForm extends React.Component {
       .then(resp => resp.json())
       .then(userObj => this.props.setLogin(userObj));
   }
-  
+
   render () {
     return (
       <div className="form-container">
         <form className="the-form" onSubmit={this.handleLogin}>
-          <label className="form-label">Log in:</label> 
+          <label className="form-label">Log in:</label>
           <br/>
           <input className="form-input" placeholder="E-Mail Address" autoComplete="off" type="email" name="email" value={this.state.email} onChange={this.handleInput} />
           <br/>
